@@ -2,10 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
+import { marsRover } from '../src/rover'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  console.log(marsRover({x: 3, y:3, direction: "N"}, "M"))
   return (
     <>
       <Head>
