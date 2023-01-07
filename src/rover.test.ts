@@ -1,4 +1,4 @@
-import { marsRover } from "./rover";
+import { marsRover, multipleRovers } from "./rover";
 describe("MarsRover", () => {
   it("Should rotate the rover right", () => {
     expect(marsRover({x: 1, y: 1, direction:"N"}, "R")).toStrictEqual({"direction": "E", "x": 1, "y": 1});
@@ -19,3 +19,11 @@ describe("MarsRover", () => {
     expect(() => marsRover({x: 3, y: 3, direction:"N"}, "g")).toThrow("Rover cannot follow instructions as they contain illegal operatations.");
   });
 });
+describe("MultipleRovers", () => {
+  it("Should give results for multiple rovers", () => {
+    expect(multipleRovers([
+      {positionsData: {x: 3, y: 3, direction:"N"}, instructions: "MLM"}, 
+      {positionsData: {x: 4, y: 4, direction:"N"}, instructions: "MLM"}
+    ])).toStrictEqual([{"direction": "W", "x": 2, "y": 4}, {"direction": "W", "x": 3, "y": 5}])
+  })
+})

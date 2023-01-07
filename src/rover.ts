@@ -1,6 +1,15 @@
 import { PositionData } from './types';
 import * as utils from './utils';
 
+interface RoverInstructions {
+    positionsData: PositionData,
+    instructions: string
+}
+
+export const multipleRovers = (roverInstructions: RoverInstructions[], maxSize = 5) => {
+    return roverInstructions.map(instruction => marsRover(instruction.positionsData, instruction.instructions, maxSize))
+}
+
 export const marsRover = (positionData: PositionData, instructions: string, maxSize = 5) => {
     if (!utils.validPosition(positionData, maxSize)) throw "Rover could not land, invalid coordinates given."
     instructions = utils.toUpperAndTrim(instructions)
