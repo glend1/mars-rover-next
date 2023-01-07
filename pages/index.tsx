@@ -1,9 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { marsRover } from '../src/rover'
 
 export default function Home() {
-  console.log(marsRover({x: 3, y:3, direction: "N"}, "M"))
   return (
     <>
       <Head>
