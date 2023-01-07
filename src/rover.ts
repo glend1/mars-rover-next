@@ -1,7 +1,7 @@
-import { positionData } from './types';
+import { PositionData } from './types';
 import * as utils from './utils';
 
-export const marsRover = (positionData: positionData, instructions: string, maxSize = 5) => {
+export const marsRover = (positionData: PositionData, instructions: string, maxSize = 5) => {
     if (!utils.validPosition(positionData, maxSize)) throw "Rover could not land, invalid coordinates given."
     instructions = utils.toUpperAndTrim(instructions)
     if (!utils.validInstructions(instructions)) throw "Rover cannot follow instructions as they contain illegal operatations."
@@ -22,7 +22,7 @@ export const marsRover = (positionData: positionData, instructions: string, maxS
     return newPositionData
 }
 
-const moveRover = (newPositionData: positionData, maxSize: number) => {
+const moveRover = (newPositionData: PositionData, maxSize: number) => {
     switch (newPositionData.direction) {
         case "N":
             newPositionData.y++

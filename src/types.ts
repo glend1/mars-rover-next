@@ -1,7 +1,7 @@
-export type directions = "N" | "E" | "S" | "W"
+export type Directions = "N" | "E" | "S" | "W"
 
-export interface positionData {
+export interface PositionData {
     x: number,
     y: number,
-    direction: directions
+    direction: Directions
 }
