@@ -5,3 +5,8 @@ export interface PositionData {
     y: number,
     direction: Directions
 }
+
+export interface RoverInstructions {
+    positionsData: PositionData,
+    instructions: string
+}

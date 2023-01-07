@@ -1,16 +1,17 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { marsRover } from '../../src/rover'
+import { multipleRovers } from '../../src/rover'
+import { PositionData, RoverInstructions } from '../../src/types'
 
-type Data = {
-  name: string
+interface RoverInput {
+  roverInstructions: RoverInstructions[], 
+  maxSize: number
 }
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<PositionData[]>
 ) {
-  console.log(req.query)
-  marsRover({x: 3, y:3, direction: "N"}, "M")
-  res.status(200).json({ name: 'John Doe' })
+  const json = req.body as RoverInput
+  res.status(200).json(multipleRovers(json.roverInstructions, json.maxSize))
 }

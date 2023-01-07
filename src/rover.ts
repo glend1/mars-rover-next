@@ -1,12 +1,7 @@
-import { PositionData } from './types';
+import { PositionData, RoverInstructions } from './types';
 import * as utils from './utils';
 
-interface RoverInstructions {
-    positionsData: PositionData,
-    instructions: string
-}
-
-export const multipleRovers = (roverInstructions: RoverInstructions[], maxSize = 5) => {
+export const multipleRovers = (roverInstructions: RoverInstructions[], maxSize = 5): PositionData[] => {
     return roverInstructions.map(instruction => marsRover(instruction.positionsData, instruction.instructions, maxSize))
 }
 
