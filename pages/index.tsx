@@ -15,7 +15,6 @@ export default function Home() {
     roverInstructions.push(roverInstructionsObject)
     roverComponents.push(<Rover id={i} roverInstructions={roverInstructionsObject} />)
   }
-  //TODO validate form
   //TODO validate api
   //TODO add react tests
   //TODO not sure linting/formating is working
@@ -46,7 +45,7 @@ export default function Home() {
           });
         }}>
           {roverComponents}
-          <label htmlFor="maxSize">Max Size:</label><input id="maxSize" value={maxSize} onChange={e => setMaxSize(parseInt(e.target.value))} type="number" />
+          <label htmlFor="maxSize">Max Size:</label><input id="maxSize" value={maxSize} onChange={e => setMaxSize(parseInt(e.target.value))} title="Must contain only numbers" pattern="\d" type="number" />
           <button>Submit</button>
         </form>
         <Results results={results} />
