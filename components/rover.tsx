@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Directions, RoverInstructions } from "../src/types"
+import { directions } from "../src/utils"
 
 
 export const Rover = ({id, roverInstructions} : { id: number, roverInstructions: RoverInstructions }) => {
@@ -14,14 +15,11 @@ export const Rover = ({id, roverInstructions} : { id: number, roverInstructions:
         roverInstructions.instructions = instructions
     }, [x, y, direction, instructions, roverInstructions])
     return <div>
-        <label htmlFor={`x[${id}]`}>X:</label><input id={`x[${id}]`} name={`rover[${id}].x`} value={x} onChange={e => setX(parseInt(e.target.value))} type="number" />
-        <label htmlFor={`y[${id}]`}>Y:</label><input id={`y[${id}]`} name={`rover[${id}].y`} value={y} onChange={e => setY(parseInt(e.target.value))} type="number" />
-        <label htmlFor={`direction[${id}]`}>Direction:</label><select onChange={e => setDirection(e.target.value)} id={`direction[${id}]`} name={`rover[${id}].direction`}>
-            <option>N</option>
-            <option>E</option>
-            <option>S</option>
-            <option>W</option>
+        <label htmlFor={`x[${id}]`}>X:</label><input id={`x[${id}]`} value={x} onChange={e => setX(parseInt(e.target.value))} type="number" />
+        <label htmlFor={`y[${id}]`}>Y:</label><input id={`y[${id}]`} value={y} onChange={e => setY(parseInt(e.target.value))} type="number" />
+        <label htmlFor={`direction[${id}]`}>Direction:</label><select onChange={e => setDirection(e.target.value)} id={`direction[${id}]`}>
+            {directions.map(direction => <option value={direction} key={direction}>{direction}</option>)}
         </select>
-        <label htmlFor={`instructions[${id}]`}>Instructions:</label><input id={`instructions[${id}]`} name={`rover[${id}].instructions`} value={instructions} onChange={e => setInstructions(e.target.value)} />
+        <label htmlFor={`instructions[${id}]`}>Instructions:</label><input id={`instructions[${id}]`} value={instructions} onChange={e => setInstructions(e.target.value)} />
     </div>
 }

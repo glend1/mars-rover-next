@@ -41,7 +41,7 @@ export default function Home() {
           });
         }}>
           {roverComponents}
-          <label htmlFor="maxSize">Max Size:</label><input id="maxSize" name="maxSize" value={maxSize} onChange={e => setMaxSize(parseInt(e.target.value))} type="number" />
+          <label htmlFor="maxSize">Max Size:</label><input id="maxSize" value={maxSize} onChange={e => setMaxSize(parseInt(e.target.value))} type="number" />
           <button>Submit</button>
         </form>
         <Results results={results} />
