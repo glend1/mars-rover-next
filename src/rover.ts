@@ -1,8 +1,12 @@
-import { PositionData, RoverInstructions } from './rover.types';
+import { ErrorType, PositionData, RoverInstructions } from './rover.types';
 import * as utils from './utils';
 
-export const multipleRovers = (roverInstructions: RoverInstructions[], maxSize = 5): PositionData[] => {
-    return roverInstructions.map(instruction => marsRover({x: instruction.x, y: instruction.y, direction: instruction.direction}, instruction.instructions, maxSize))
+export const multipleRovers = (roverInstructions: RoverInstructions[], maxSize = 5): PositionData[] | ErrorType => {
+    try {
+        return roverInstructions.map(instruction => marsRover({x: instruction.x, y: instruction.y, direction: instruction.direction}, instruction.instructions, maxSize))
+    } catch (e) {
+        return {error: e} as ErrorType
+    }
 }
 
 export const marsRover = (positionData: PositionData, instructions: string, maxSize = 5) => {

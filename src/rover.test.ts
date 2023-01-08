@@ -26,4 +26,10 @@ describe("MultipleRovers", () => {
       {x: 4, y: 4, direction:"N", instructions: "MLM"}
     ])).toStrictEqual([{"direction": "W", "x": 2, "y": 4}, {"direction": "W", "x": 3, "y": 5}])
   })
+  it("Should throw an error as json", () => {
+    expect(multipleRovers([
+      {x: 6, y: 3, direction:"N", instructions: "MLM"}, 
+      {x: 4, y: 4, direction:"N", instructions: "MLM"}
+    ])).toStrictEqual({error: "Rover could not land, invalid coordinates given."})
+  })
 })

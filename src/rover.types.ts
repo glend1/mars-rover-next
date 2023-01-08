@@ -1,5 +1,7 @@
 export type Directions = "N" | "E" | "S" | "W"
 
+export interface ErrorType {error: string}
+
 export interface PositionData {
     x: number,
     y: number,
