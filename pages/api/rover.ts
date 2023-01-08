@@ -8,6 +8,7 @@ interface RoverInput {
   maxSize: number
 }
 
+//TODO make sure this falls over gracefully
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<PositionData[]>

@@ -15,6 +15,7 @@ export default function Home() {
     roverInstructions.push(roverInstructionsObject)
     roverComponents.push(<Rover id={i} roverInstructions={roverInstructionsObject} />)
   }
+  //TODO validate form
   return (
     <>
       <Head>
