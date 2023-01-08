@@ -67,3 +67,8 @@ describe("toUpperAndTrim", () => {
       expect(utils.toUpperAndTrim("m")).toEqual("M");
     });
 })
+describe("firstCharacterUpper", () => {
+    it("Should change the first character to be uppercase", () => {
+      expect(utils.firstCharacterUpper("hello")).toEqual("Hello");
+    });
+})

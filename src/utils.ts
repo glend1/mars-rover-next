@@ -1,6 +1,6 @@
 import { Directions, PositionData } from "./types"
 
-const directions: Directions[] = ["N", "E", "S", "W"]
+export const directions: Directions[] = ["N", "E", "S", "W"]
 
 export const rotateLeft = (direction: Directions) => {
     if (direction === "N") return directions[directions.length - 1]
@@ -17,3 +17,5 @@ export const validPosition = (positionData: PositionData, maxSize: number) => po
 export const validInstructions = (instructions: string) => !/[^RML]/i.test(instructions)
 
 export const toUpperAndTrim = (string: string) => string.trim().toUpperCase()
+
+export const firstCharacterUpper = (string: string) => `${string[0].toLocaleUpperCase()}${string.substring(1)}`
