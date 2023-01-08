@@ -15,7 +15,6 @@ export default function Home() {
     roverInstructions.push(roverInstructionsObject)
     roverComponents.push(<Rover id={i} roverInstructions={roverInstructionsObject} />)
   }
-  //TODO add readme
   //TODO add react/api tests
   //TODO not sure linting/formating is working
   //TODO maybe make it look nicer
