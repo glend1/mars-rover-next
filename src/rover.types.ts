@@ -6,7 +6,6 @@ export interface PositionData {
     direction: Directions
 }
 
-export interface RoverInstructions {
-    positionsData: PositionData,
+export interface RoverInstructions extends PositionData {
     instructions: string
 }

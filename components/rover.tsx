@@ -9,9 +9,9 @@ export const Rover = ({id, roverInstructions} : { id: number, roverInstructions:
     const [direction, setDirection] = useState<Directions>("N")
     const [instructions, setInstructions] = useState("")
     useEffect(() => {
-        roverInstructions.positionsData.x = x
-        roverInstructions.positionsData.y = y
-        roverInstructions.positionsData.direction = direction
+        roverInstructions.x = x
+        roverInstructions.y = y
+        roverInstructions.direction = direction
         roverInstructions.instructions = instructions
     }, [x, y, direction, instructions, roverInstructions])
     return <div>

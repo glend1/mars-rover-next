@@ -11,7 +11,7 @@ export default function Home() {
   const roverComponents = []
   const roverInstructions: RoverInstructions[] = []
   for (let i = 1; i < 3; i++) {
-    const roverInstructionsObject: RoverInstructions = {positionsData: {x: 0, y: 0, direction: "N"}, instructions: ""}
+    const roverInstructionsObject: RoverInstructions = {x: 0, y: 0, direction: "N", instructions: ""}
     roverInstructions.push(roverInstructionsObject)
     roverComponents.push(<Rover id={i} roverInstructions={roverInstructionsObject} />)
   }

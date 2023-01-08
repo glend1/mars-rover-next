@@ -22,8 +22,8 @@ describe("MarsRover", () => {
 describe("MultipleRovers", () => {
   it("Should give results for multiple rovers", () => {
     expect(multipleRovers([
-      {positionsData: {x: 3, y: 3, direction:"N"}, instructions: "MLM"}, 
-      {positionsData: {x: 4, y: 4, direction:"N"}, instructions: "MLM"}
+      {x: 3, y: 3, direction:"N", instructions: "MLM"}, 
+      {x: 4, y: 4, direction:"N", instructions: "MLM"}
     ])).toStrictEqual([{"direction": "W", "x": 2, "y": 4}, {"direction": "W", "x": 3, "y": 5}])
   })
 })
