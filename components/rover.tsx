@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Directions, RoverInstructions } from "../src/types"
+import { Directions, RoverInstructions } from "../src/rover.types"
 import { directions } from "../src/utils"
 
 

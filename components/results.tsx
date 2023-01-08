@@ -1,4 +1,4 @@
-import { PositionData } from "../src/types"
+import { PositionData } from "../src/rover.types"
 import { firstCharacterUpper } from "../src/utils"
 
 export const Results = ({results}: {results:PositionData[]}) => {

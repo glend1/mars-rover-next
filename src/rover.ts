@@ -1,4 +1,4 @@
-import { PositionData, RoverInstructions } from './types';
+import { PositionData, RoverInstructions } from './rover.types';
 import * as utils from './utils';
 
 export const multipleRovers = (roverInstructions: RoverInstructions[], maxSize = 5): PositionData[] => {

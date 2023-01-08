@@ -1,4 +1,4 @@
-import { Directions, PositionData } from "./types"
+import { Directions, PositionData } from "./rover.types"
 
 export const directions: Directions[] = ["N", "E", "S", "W"]
 

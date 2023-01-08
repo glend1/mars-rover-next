@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { Results } from '../components/results'
 import { Rover } from '../components/rover'
-import { PositionData, RoverInstructions } from '../src/types'
+import { PositionData, RoverInstructions } from '../src/rover.types'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
