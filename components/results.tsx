@@ -9,9 +9,9 @@ export const Results = ({results}: {results:PositionData[]}) => {
             keys.map(key => <th key={key}>{firstCharacterUpper(key)}</th>)
             }</thead>
             <tbody>
-                {results.map((positionData, i) => <tr key={i}>{keys.map(key => <td key={key}>{positionData[key]}</td>)}</tr>)}
+                {results.map((positionData, i) => <tr key={i}>{keys.map(key => <td key={key}>{positionData[key as keyof PositionData]}</td>)}</tr>)}
             </tbody>
         </table>
     }
-    return <></>
+    return <p>No Rover data to process.</p>
 }
