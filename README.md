@@ -51,3 +51,9 @@ The REST api will be located at [http://localhost:3000/api/rover](http://localho
   "maxSize": 5
 }
 ```
+
+## Tests
+Tests can be run
+```
+npm run test
+```
