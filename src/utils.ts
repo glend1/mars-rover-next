@@ -14,7 +14,6 @@ export const rotateRight = (direction: Directions) => {
 
 export const validPosition = (positionData: PositionData, maxSize: number) => positionData.x > maxSize || positionData.y > maxSize || positionData.x < 0 || positionData.y < 0 ? false : true
 
-//TODO this is duplicated in the rover component for the instruction field
 export const validInstructions = (instructions: string) => /^[RMLrml]*$/i.test(instructions)
 
 export const toUpperAndTrim = (string: string) => string.trim().toUpperCase()

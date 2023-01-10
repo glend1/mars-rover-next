@@ -16,11 +16,9 @@ export const Rover = ({id, roverInstructions} : { id: number, roverInstructions:
     return <div>
         <label htmlFor={`x[${id}]`}>X:</label><input id={`x[${id}]`} value={x} onChange={e => setX(parseInt(e.target.value))} title="Must contain only numbers" pattern="\d" type="number"/>
         <label htmlFor={`y[${id}]`}>Y:</label><input id={`y[${id}]`} value={y} onChange={e => setY(parseInt(e.target.value))} title="Must contain only numbers" pattern="\d" type="number" />
-        {/* //TODO am not convinced casting here is a good idea */}
         <label htmlFor={`direction[${id}]`}>Direction:</label><select onChange={e => setDirection(e.target.value as Directions)} id={`direction[${id}]`}>
             {directions.map(direction => <option value={direction} key={direction}>{direction}</option>)}
         </select>
-        {/* //TODO this is duplicated in rover utils */}
         <label htmlFor={`instructions[${id}]`}>Instructions:</label><input id={`instructions[${id}]`} value={instructions} required title="Must only contain the letters R, M, or L" pattern="^[RMLrml]*$" onChange={e => {if (validInstructions(e.target.value)) setInstructions(e.target.value)}} />
     </div>
 }
