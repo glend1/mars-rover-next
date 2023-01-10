@@ -2,12 +2,12 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { Results } from '../components/results'
 import { Rover } from '../components/rover'
-import { PositionData, RoverInstructions } from '../src/rover.types'
+import { ErrorType, PositionData, RoverInstructions } from '../src/rover.types'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
   const [maxSize, setMaxSize] = useState(5)
-  const [results, setResults] = useState<PositionData[]>([])
+  const [results, setResults] = useState<PositionData[] | ErrorType>([])
   const roverComponents = []
   const roverInstructions: RoverInstructions[] = []
   for (let i = 1; i < 3; i++) {
@@ -39,7 +39,7 @@ export default function Home() {
             setResults(data)
           })
           .catch((error) => {
-            console.error('Error:', error);
+            setResults({error: "An unknown error has occured"})
           });
         }}>
           {roverComponents}
