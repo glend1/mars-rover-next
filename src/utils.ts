@@ -1,6 +1,6 @@
 import { Directions, PositionData } from "./rover.types"
 
-export const directions: Directions[] = ["N", "E", "S", "W"]
+export const directions = ["N", "E", "S", "W"] as const
 
 export const rotateLeft = (direction: Directions) => {
     if (direction === "N") return directions[directions.length - 1]
